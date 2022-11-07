@@ -1,2 +1,2 @@
-# Portfolio
-Repository for my software development portfolio
+# Portfolio Website
+Repository for my software development portfolio website.
