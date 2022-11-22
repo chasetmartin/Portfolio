@@ -21,9 +21,12 @@
         <!---Navbar-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <a href="#Gallery">Gallery</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <!-- To open and close the contact form-->
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
+            
         </div>
 
         <!---Breaks inserted to add space between navbar and first heading-->
@@ -32,7 +35,7 @@
 
         <!--Background video-->
         <div id="Home">
-            <video autoplay muted loop id="Typing_Video">
+            <video autoplay muted loop id="Banner_Video">
                 <source src="images/video/clouds3.mp4" type="video/mp4">
                 <!--Display message if video fails to run-->
                 Your browser does not support HTML5 video.
@@ -49,6 +52,19 @@
                     <br>Thank you for stopping by and enjoy!
                 </h2>
             </strong>
+        </div>
+
+        <!-- Gallery section added -->
+        <div id="Slideshow">
+            <div id="Slideshow_Background">
+                <div id="Slideshow_Container">
+                    <!--Slide 1 of 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/chase_martin.jpg" alt="Headshot">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!--About section-->
@@ -116,5 +132,6 @@
                 <br>
             </p>
         </footer>
+        <script src="js/portfolio.js"></script>
     </body>
 </html>
