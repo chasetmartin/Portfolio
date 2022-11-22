@@ -216,8 +216,9 @@ footer {
 } */
 #Banner_Video {
     position: fixed;
+    right: 0;
     bottom: 0;
-    width: 105%;
+    min-width: 100%;
     z-index: -1;
     filter: grayscale(100%);
 }
@@ -226,6 +227,8 @@ footer {
 @media screen and (max-width: 576px) {
     #Banner_Video {
         display: none;
+        height: 0;
+        background: black;
     }
 }
 
@@ -246,11 +249,24 @@ footer {
     from {top: -100vw;} 
     to {top: 0vw;} 
 }
+
+@media screen and (max-width: 576px) {
+    .Video_Text {
+        background: black;
+        height: 34vh;
+    }
+}
 /***** END OF VIDEO STYLING *****/
 
 /***** Slideshow Styling ******/
 #Slidshow_Background {
     background: rgba(255, 255, 255, 0.35);
+}
+
+@media screen and (max-width: 576px) {
+    #Slideshow_Background {
+        background: black;
+    }
 }
 
 /* .mySlides {
@@ -319,7 +335,7 @@ footer {
     letter-spacing: .1vw;
     font-size: 1.5vw;
     background-color: rgba(51, 70, 88, 0.75);
-    font-weight: bold;
+    font-weight: 200;
     border-radius: 0px 0px 7px 7px;
 }
 
@@ -410,7 +426,7 @@ footer {
 }
 /***** END OF TABLE STYLING *****/
 
-/***** CONTACT FORM STYLING *****/
+/***** OLD CONTACT FORM STYLING 
 
 input[type=text] {
     width: 100%; 
@@ -424,12 +440,12 @@ input[type=text] {
     font-family: 'Jost', sans-serif;
 }
 
-/* Hover effects for input boxes */
+/* Hover effects for input boxes 
 input[type=text]:hover {
     box-shadow: 0 0 5px #00004d inset; 
 }
 
-/* Submit button */
+/* Submit button 
 input[type=submit] {
     background-color: black; 
     color: white; 
@@ -444,7 +460,7 @@ input[type=submit] {
     font-family: 'Jost', sans-serif;
 }
 
-/* Hover effect for submit button */
+/* Hover effect for submit button 
 input[type=submit]:hover {
     background-color: white; 
     color: black; 
@@ -452,7 +468,7 @@ input[type=submit]:hover {
     transition: transform 1s; 
 }
 
-/* Form element */
+/* Form element 
 form {
     border-radius: 5px; 
     background-color: #f2f2f2; 
@@ -460,3 +476,239 @@ form {
     font-family: "Trebuchet MS", Optima;
 }
 /***** END OF CONTACT FORM STYLING *****/
+
+/*** NEW CONTACT FORM POP UP STYLING ***/
+/*Button used to open contact form fixed at the bottom of the page*/
+.Pop_Up_Button {
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 20vw;
+    background-color: white;
+    color: black;
+    border: solid black;
+    cursor: pointer;
+    -webkit-animation: movePopup 5s;
+    animation: movePopup 5s;
+}
+
+/*move pop up botton onto screen from the bottom*/
+@keyframes movePopup {
+    from {bottom: -40vw;}
+    to {bottom: 1.75vw;}
+}
+
+@-webkit-keyframes movePopup {
+    from {bottom: -40vw;}
+    to {bottom: 1.75vw;}
+}
+
+/*styling for conact form */
+.form-popup {
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: 0.5vw;
+    right: 0.5vw;
+}
+
+/*form styling */
+.form-container {
+    max-width: 49vw;
+    padding: 1vw;
+    background-color: white;
+}
+
+/*input fields*/
+.form-container input[type=text] {
+    width: 100%;
+    padding: 0.93vw;
+    margin: .6vw 0 .6vw 0;
+    border: none;
+    background: gainsboro;
+    font-size: 1vw;
+}
+
+/*general styling for all buttons*/
+button {
+    font-family: 'Jost';
+    letter-spacing: 0.3vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1vw;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+}
+
+/*hover effect for the contact and submit buttons*/
+button:hover, .form-container .btn:hover {
+    color: white;
+    background-color: black;
+    transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+    border-color: white;
+}
+
+/*submit button*/
+.form-container .btn {
+    background: white;
+    color: black;
+    border-color: black;
+    margin-bottom: 1vh;
+}
+
+/*close button*/
+.form-container .cancel {
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+
+/*close button on hover*/
+.form-container .cancel:hover {
+    color: white;
+    background-color: darkred;
+    transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+    border-color: black;
+}
+
+/**** End of Contact Form Styling ****/
+
+/***Media Query Section ***/
+@media screen and (max-width: 527px) {
+    p {
+        font-size: 2.8vw;
+    }
+}
+
+@media screen and (min-width: 528px) and (max-width: 660px) {
+    p {
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (min-width: 661px) and (max-width: 799px) {
+    p {
+        font-size: 2.2vw;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 924px) {
+    p {
+        font-size: 1.8vw;
+    }
+}
+
+@media screen and (min-width: 925px) and (max-width: 1050px) {
+    p {
+        font-size: 1.7vw;
+    }
+}
+
+@media screen and (min-width: 1051px) and (max-width: 1310px) {
+    p {
+        font-size: 1.4vw;
+    } 
+}
+
+@media screen and (min-width: 1311px) and (max-width: 1535px) {
+    p {
+        font-size: 1.2vw;
+    }
+}
+
+@media screen and (min-width: 1536px) and (max-width: 2269px) {
+    p {
+        font-size: 1.1vw;
+    }
+}
+
+@media screen and (min-width: 2270px) {
+    p {
+        font-size: 1vw;
+    }
+}
+
+@media screen and (max-width: 527px) {
+    h2 {
+        font-size: 2.3vw;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 660px) {
+    h2 {
+        font-size: 2.7vw;
+    }
+}
+
+@media screen and (min-width: 661px) and (max-width: 799px) {
+    h2 {
+        font-size: 2.4vw;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 924px) {
+    h2 {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (min-width: 925px) and (max-width: 1050px) {
+    h2 {
+        font-size: 1.9vw;
+    }
+}
+
+@media screen and (min-width: 1051px) and (max-width: 1310px) {
+    h2 {
+        font-size: 1.6vw;
+    } 
+}
+
+@media screen and (min-width: 1311px) and (max-width: 1535px) {
+    h2 {
+        font-size: 1.4vw;
+    }
+}
+
+@media screen and (min-width: 1536px) and (max-width: 2269px) {
+    h2 {
+        font-size: 1.3vw;
+    }
+}
+
+@media screen and (min-width: 2270px) {
+    h2 {
+        font-size: 1.2vw;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .Navbar a{
+        width: 20%; /* This sets each navbar link to 1/5 of the navbar */
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .white-text {
+        font-size: 4.5vw;
+    }
+}
+
+@media screen and (min-width: 1725px) {
+    .Column_1 {
+        height: 550px;
+    }
+    .Column_2 {
+        height: 550px;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    h1{
+        margin-top: 0;
+    }
+}

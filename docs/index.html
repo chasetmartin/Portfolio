@@ -21,7 +21,7 @@
         <!---Navbar-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
-            <a href="#Gallery">Gallery</a>
+            <a href="#Slideshow">Gallery</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
             <!-- To open and close the contact form-->
@@ -44,7 +44,9 @@
 
         <!--Video Text-->
         <div class="Video_Text">
-            <h4 class="white-text left-title">Chase Martin</h4>
+            <h4 class="white-text left-title">
+                <br>
+                Chase Martin</h4>
             <strong>
                 <h2 class="right-title">
                         Welcome to my portfolio website. I encourage you to have look around, and please check out my latest projects!
@@ -63,6 +65,16 @@
                         <img class="Slideshow_Images" src="images/chase_martin.jpg" alt="Headshot">
                         <div class="text">I'm available to assist you on your project!</div>
                     </div>
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
                 </div>
             </div>
         </div>
@@ -104,23 +116,22 @@
         </div>
 
         <!---Contact section-->
-        <div class="Row" id="Contact">
-            <!--Conact image, left column-->
-            <div class="Column_2 Column_tall_1">
-                <img src="images/mountain.jpg" alt="Contact_Image">
-            </div>
-            <!--Conact form, right column-->
-            <div class="Column_1 Column_tall_2">
-                <h1>Contact</h1>
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
                 <!--This specifies where and how to send the form data-->
-                <form action="https://formspree.io/f/xknekrre" method="POST">
-                    <label>Name:</label>
-                        <input type="text" name="Name" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message:</label>
+                <form action="https://formspree.io/f/xknekrre" method="POST" class="form-container">
+                    <h1>Contact</h1>
+                    <label for="name">Name:</label>
+                        <input type="text" name="Name" placeholder="Please enter your name here" required>
+                    <label for="phone">Phone</label>
+                        <input type="text" name="Phone" placeholder="Please enter your phone number here">
+                    <label for="email">Email:</label>
+                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here" required>
+                    <label for="message">Message:</label>
                         <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
