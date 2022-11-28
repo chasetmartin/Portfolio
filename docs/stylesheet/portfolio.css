@@ -112,7 +112,7 @@ q {
 
 /* Image elements */
 img {
-    filter: grayscale(75%);
+    filter: grayscale(20%);
     border-radius: 8px;
     max-width: 100%;
     max-height: 100%;
@@ -120,12 +120,23 @@ img {
     margin: auto auto auto auto;
 }
 
-/* Image element hover effects */
+/* Image element hover effects 
 img:hover {
 	filter: grayscale(50%);
     transition: transform 0.5s;
 	transform: scale(1.02);
+} */
+
+.photohover {
+    filter: grayscale(75%);
 }
+
+.photohover:hover {
+	filter: grayscale(50%);
+    transition: transform 0.5s;
+	transform: scale(1.02);
+}
+
 /* On screens 576px and smaller the images will be 100px tall and centered vertically in the column 
 @media screen and (max-width: 576px) {
     img {
