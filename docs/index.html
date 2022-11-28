@@ -21,9 +21,12 @@
         <!---Navbar-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <a href="#Slideshow">Gallery</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <!-- To open and close the contact form-->
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
+            
         </div>
 
         <!---Breaks inserted to add space between navbar and first heading-->
@@ -32,7 +35,7 @@
 
         <!--Background video-->
         <div id="Home">
-            <video autoplay muted loop id="Typing_Video">
+            <video autoplay muted loop id="Banner_Video">
                 <source src="images/video/clouds3.mp4" type="video/mp4">
                 <!--Display message if video fails to run-->
                 Your browser does not support HTML5 video.
@@ -41,7 +44,9 @@
 
         <!--Video Text-->
         <div class="Video_Text">
-            <h4 class="white-text left-title">Chase Martin</h4>
+            <h4 class="white-text left-title">
+                <br>
+                Chase Martin</h4>
             <strong>
                 <h2 class="right-title">
                         Welcome to my portfolio website. I encourage you to have look around, and please check out my latest projects!
@@ -51,11 +56,59 @@
             </strong>
         </div>
 
+        <!-- Gallery section added -->
+        <div id="Slideshow">
+            <div id="Slideshow_Background">
+                <div id="Slideshow_Container">
+                    <!--Slide 1 of 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/mountain-2.jpg" alt="Headshot">
+                        <div class="text">I am a full-stack software developer!</div>
+                    </div>
+                    <!-- Slide 2 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/languages-3.jpg" alt="HTML, CSS"> 
+                        <div class="text">I'm training in: HTML, CSS,</div>
+                    </div>
+                    <!-- Slide 3 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/languages-4.jpg" alt="JavaScript">
+                        <div class="text">JavaScript and its various libraries,</div>
+                    </div>
+                    <!-- Slide 4 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/languages-5.jpg" alt="Python logo">
+                        <div class="text">the popular programming language Python,</div>
+                    </div>
+                    <!-- Slide 5 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/languages-1.jpg" alt="C# logo">
+                        <div class="text">C#, .NET Framework, ASP.NET, MVC, </div>
+                    </div>
+                    <!-- Slide 6 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/languages-6.jpg" alt="SQL logo"> 
+                        <div class="text">back end development, databases and SQL.</div>
+                    </div>
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
+            </div>
+        </div>
+
         <!--About section-->
         <div class="Row" id="About">
             <!--Left Column-->
             <div class="Column_2">
-                <img src="images/chase_martin.jpg" alt="Replace this image">
+                <img class="photohover" src="images/headshot.jpg" alt="Chase Martin">
             </div>
             <!--Right column-->
             <div class="Column_1">
@@ -83,28 +136,27 @@
             </div>
             <!--Right Column-->
             <div class="Column_2">
-                <a href="https://github.com/chasetmartin" target="_blank"><img src="images/GitHub.png" alt="GitHub Logo"></a>
+                <a href="https://github.com/chasetmartin" target="_blank"><img class="photohover" src="images/GitHub.png" alt="GitHub Logo"></a>
             </div>
         </div>
 
         <!---Contact section-->
-        <div class="Row" id="Contact">
-            <!--Conact image, left column-->
-            <div class="Column_2 Column_tall_1">
-                <img src="images/mountain.jpg" alt="Contact_Image">
-            </div>
-            <!--Conact form, right column-->
-            <div class="Column_1 Column_tall_2">
-                <h1>Contact</h1>
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
                 <!--This specifies where and how to send the form data-->
-                <form action="https://formspree.io/f/xknekrre" method="POST">
-                    <label>Name:</label>
-                        <input type="text" name="Name" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
+                <form action="https://formspree.io/f/xknekrre" method="POST" class="form-container">
+                    <h1>Contact</h1>
+                    <label for="name">Name:</label>
+                        <input type="text" name="Name" placeholder="First and last name" required>
+                    <label for="phone">Phone</label>
+                        <input type="text" name="Phone" placeholder="Phone number">
+                    <label for="email">Email:</label>
+                        <input type="text" id="Email" name="Email" placeholder="Email Address" required>
+                    <label for="message">Message:</label>
+                        <input type="text" id="Message" name="Message" placeholder="Message">
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
@@ -116,5 +168,6 @@
                 <br>
             </p>
         </footer>
+        <script src="js/portfolio.js"></script>
     </body>
 </html>
