@@ -112,7 +112,7 @@ q {
 
 /* Image elements */
 img {
-    filter: grayscale(20%);
+    filter: grayscale(40%);
     border-radius: 8px;
     max-width: 100%;
     max-height: 100%;
@@ -128,11 +128,11 @@ img:hover {
 } */
 
 .photohover {
-    filter: grayscale(75%);
+    filter: grayscale(95%);
 }
 
 .photohover:hover {
-	filter: grayscale(50%);
+	filter: grayscale(75%);
     transition: transform 0.5s;
 	transform: scale(1.02);
 }
