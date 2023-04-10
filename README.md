@@ -1,2 +1,2 @@
 # Portfolio Website
-Repository for my software development portfolio website.
+Repository for my active software development portfolio website located at www.chasethomasmartin.com
